@@ -1,6 +1,7 @@
 package it.sephiroth.android.library.widget;
 
 import it.sephiroth.android.library.R;
+import it.sephiroth.android.library.util.SparseBooleanArrayUtils;
 import it.sephiroth.android.library.util.ViewHelperFactory;
 import it.sephiroth.android.library.util.ViewHelperFactory.ViewHelper;
 import it.sephiroth.android.library.util.v11.MultiChoiceModeListener;
@@ -1416,7 +1417,7 @@ public abstract class AbsHListView extends AdapterView<ListAdapter> implements V
 				&& mChoiceActionMode != null;
 
 		if ( mCheckStates != null ) {
-			ss.checkState = mCheckStates.clone();
+			ss.checkState = SparseBooleanArrayUtils.clone(mCheckStates);
 		}
 		if ( mCheckedIdStates != null ) {
 			final LongSparseArray<Integer> idState = new LongSparseArray<Integer>();
